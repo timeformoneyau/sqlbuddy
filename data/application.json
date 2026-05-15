@@ -84,5 +84,43 @@
       "pctOwn": "100%",
       "piInterestRate": "6.38%"
     }
+  ],
+  "liabilities": [
+    {
+      "type": "Home Loan",
+      "lender": "Bank Australia Limited",
+      "repaymentType": "Principle And Interest",
+      "balance": "",
+      "limit": "",
+      "accNo": "3322123",
+      "rent": "",
+      "homer": true,
+      "homey": true,
+      "repayment": "",
+      "postCode": "2000",
+      "remainingTermsMonths": "",
+      "repaymentFrequency": "Monthly",
+      "pctOwn": "50%",
+      "interestRate": "",
+      "details": ""
+    },
+    {
+      "type": "Credit Card",
+      "lender": "Star Nova Finance",
+      "repaymentType": "None",
+      "balance": "",
+      "limit": "",
+      "accNo": "SN-88421",
+      "rent": "",
+      "homer": true,
+      "homey": false,
+      "repayment": "",
+      "postCode": "2000",
+      "remainingTermsMonths": "",
+      "repaymentFrequency": "Monthly",
+      "pctOwn": "100%",
+      "interestRate": "",
+      "details": ""
+    }
   ]
 }
