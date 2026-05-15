@@ -1,0 +1,88 @@
+{
+  "applicationId": "1259FD7A4B",
+  "brand": "homestar",
+  "status": {
+    "label": "Assessment",
+    "detail": "DLA4"
+  },
+  "queue": {
+    "name": "In Assessment",
+    "hours": 19
+  },
+  "submittedDate": "14/05/2026",
+  "submittedHoursAgo": 19,
+  "refinanceAmount": "$2,730,000",
+  "valuation": "$3,500,000",
+  "estimatedPrice": "$3,500,000",
+  "lvr": "78%",
+  "lmi": "No",
+  "property": {
+    "street": "20 Pottinger Street",
+    "suburb": "Sydney",
+    "state": "NSW",
+    "postcode": "2000"
+  },
+  "threatMetrixRun": false,
+  "applicationAlerts": 7,
+  "applicantAlerts": 4,
+  "primaryApplicant": {
+    "surname": "HomestarOne",
+    "firstName": "Homer"
+  },
+  "additionalApplicants": [
+    {
+      "surname": "HomestarOne",
+      "firstName": "Homey"
+    }
+  ],
+  "existingLoan": {
+    "loanType": "Interest Only",
+    "outstandingBalance": "$200,000",
+    "loanTerm": "",
+    "interestRate": "8.99%",
+    "monthlyRepayment": "$12,000",
+    "institution": "Bank Australia Limited",
+    "accountNumber": "3322123",
+    "cashoutAmount": "$2,530,000"
+  },
+  "newLoan": {
+    "product": "Star Nova Variable Home Loan INV P&I",
+    "loanAmount": "$2,730,000",
+    "loanTerm": "30 years",
+    "interestRate": "6.38 %",
+    "monthlyRepayment": "$17,041"
+  },
+  "customerObjectives": {
+    "refinanceObjective": "To reduce current borrowing costs"
+  },
+  "validatedDetails": [
+    {
+      "type": "Home Loan",
+      "repaymentType": "Interest Only",
+      "lender": "Bank Australia Limited",
+      "balance": "$200,000",
+      "accNo": "3322123",
+      "homer": "Yes",
+      "homey": "Yes",
+      "piRepayment": "$12,000",
+      "remainingTermYears": 25,
+      "repaymentFrequency": "Monthly",
+      "pctOwn": "50%",
+      "piInterestRate": "8.99%"
+    },
+    {
+      "type": "Investment",
+      "repaymentType": "P&I",
+      "lender": "Star Nova Finance",
+      "balance": "$2,730,000",
+      "accNo": "SN-88421",
+      "homer": "Yes",
+      "homey": "No",
+      "piRepayment": "$17,041",
+      "remainingTermYears": 30,
+      "repaymentFrequency": "Monthly",
+      "pctOwn": "100%",
+      "piInterestRate": "6.38%"
+    }
+  ]
+}
