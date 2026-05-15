@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Header } from "@/components/shell/Header";
+// No web-font imports — Arial stack set globally in globals.css
 import { UtilityRail } from "@/components/shell/UtilityRail";
 import { TabNav } from "@/components/shell/TabNav";
 import { SubBrandBadge } from "@/components/shell/SubBrandBadge";
@@ -19,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full">
+    <html lang="en" className="h-full" style={{ fontFamily: "Arial, Helvetica, sans-serif" }}>
       <body className="h-full flex flex-col" style={{ background: "var(--colcap-page-bg)" }}>
         {/* ── Top header band ── */}
         <Header />

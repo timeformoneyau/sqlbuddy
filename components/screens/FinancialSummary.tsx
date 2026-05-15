@@ -47,15 +47,16 @@ const tableHeaderStyle: React.CSSProperties = {
   color: "var(--colcap-section-text)",
   fontWeight: "bold",
   textAlign: "left",
-  padding: "6px 8px",
+  padding: "4px 8px",
   fontSize: "12px",
-  borderBottom: "1px solid #c5d9eb",
+  borderBottom: "1px solid #D0D0D0",
 };
 
 const tableCellStyle: React.CSSProperties = {
-  padding: "5px 8px",
+  padding: "3px 8px",
   fontSize: "12px",
-  borderBottom: "1px solid var(--colcap-divider)",
+  fontWeight: "normal",
+  borderBottom: "1px solid #D0D0D0",
   verticalAlign: "top",
 };
 
@@ -111,7 +112,7 @@ export function FinancialSummary({
         {/* LEFT — Existing Loan */}
         <div
           className="flex-1 border bg-white"
-          style={{ borderColor: "var(--colcap-divider)" }}
+          style={{ borderColor: "#D0D0D0", borderRadius: 0 }}
         >
           <table className="w-full border-collapse">
             <thead>
@@ -136,7 +137,7 @@ export function FinancialSummary({
         {/* RIGHT — New Loan Details */}
         <div
           className="flex-1 border bg-white"
-          style={{ borderColor: "var(--colcap-divider)" }}
+          style={{ borderColor: "#D0D0D0", borderRadius: 0 }}
         >
           <SectionHeader title="New Loan Details" />
           <table className="w-full border-collapse">
@@ -168,7 +169,7 @@ export function FinancialSummary({
                     width: "240px",
                     backgroundColor: "var(--colcap-section-bg)",
                     color: "var(--colcap-section-text)",
-                    fontWeight: "500",
+                    fontWeight: "normal",
                   }}
                 >
                   Refinance Objective
