@@ -21,31 +21,26 @@ interface AppData {
   additionalApplicants: Applicant[];
 }
 
+/* Flat text row — no outer container, just a divider line on the bottom */
 const row: React.CSSProperties = {
-  padding: "3px 6px",
-  fontSize: "11px",
-  borderBottom: "1px solid #D0D0D0",
+  padding: "6px 12px",
+  fontSize: "12px",
+  borderBottom: "1px solid #E0E0E0",
   background: "white",
   lineHeight: "1.35",
 };
 
 export function AppContextPanel({ data }: { data: AppData }) {
   return (
-    <div
-      style={{
-        width: "256px",
-        minWidth: "256px",
-        border: "1px solid #D0D0D0",
-        background: "white",
-      }}
-    >
+    /* No outer border, no card — just a plain white column */
+    <div style={{ width: "280px", minWidth: "280px", background: "white" }}>
       <div style={row}>
-        <span style={{ color: "#555" }}>Application ID : </span>
+        <span style={{ color: "#666" }}>Application ID : </span>
         {data.applicationId}
       </div>
 
       <div style={row}>
-        <span style={{ color: "#555" }}>Current Status : </span>
+        <span style={{ color: "#666" }}>Current Status : </span>
         {data.status.label} –{" "}
         <a href="#" style={{ color: "var(--colcap-link)" }}>
           {data.status.detail}
@@ -53,7 +48,7 @@ export function AppContextPanel({ data }: { data: AppData }) {
       </div>
 
       <div style={row}>
-        <span style={{ color: "#555" }}>Current Queue : </span>
+        <span style={{ color: "#666" }}>Current Queue : </span>
         {data.queue.name} for {data.queue.hours} hours
       </div>
 
@@ -62,7 +57,7 @@ export function AppContextPanel({ data }: { data: AppData }) {
       </div>
 
       <div style={row}>
-        <span style={{ color: "#555" }}>Refinance </span>for {data.refinanceAmount}
+        <span style={{ color: "#666" }}>Refinance </span>for {data.refinanceAmount}
       </div>
 
       <div style={row}>
@@ -73,14 +68,15 @@ export function AppContextPanel({ data }: { data: AppData }) {
         LVR {data.lvr} | LMI {data.lmi}
       </div>
 
-      {/* ThreatMetrix */}
+      {/* ThreatMetrix — no divider line, just padding */}
       <div
         style={{
-          padding: "3px 6px",
-          fontSize: "11px",
+          padding: "6px 12px",
+          fontSize: "12px",
           fontWeight: "600",
           lineHeight: "1.35",
           color: "var(--colcap-status-warning)",
+          borderBottom: "1px solid #E0E0E0",
         }}
       >
         {data.threatMetrixRun
@@ -89,21 +85,21 @@ export function AppContextPanel({ data }: { data: AppData }) {
       </div>
 
       {/* Alert links */}
-      <div style={{ padding: "1px 6px", fontSize: "11px" }}>
+      <div style={{ padding: "4px 12px 2px", fontSize: "12px", borderBottom: "1px solid #E0E0E0" }}>
         <a href="#" style={{ color: "var(--colcap-link)" }}>
           {data.applicationAlerts} new application level alerts.
         </a>
       </div>
-      <div style={{ padding: "1px 6px 4px", fontSize: "11px" }}>
+      <div style={{ padding: "2px 12px 4px", fontSize: "12px", borderBottom: "1px solid #E0E0E0" }}>
         <a href="#" style={{ color: "var(--colcap-link)" }}>
           {data.applicantAlerts} new applicant level alerts.
         </a>
       </div>
 
       {/* Applicants */}
-      <div style={{ padding: "4px 6px 5px", fontSize: "11px", borderTop: "1px solid #D0D0D0" }}>
-        <div style={{ display: "flex", gap: "4px", marginBottom: "2px" }}>
-          <span style={{ color: "#555", flexShrink: 0, width: "104px" }}>
+      <div style={{ padding: "6px 12px", fontSize: "12px" }}>
+        <div style={{ display: "flex", gap: "4px", marginBottom: "3px" }}>
+          <span style={{ color: "#666", flexShrink: 0, width: "108px" }}>
             Primary Applicant:
           </span>
           <span>
@@ -115,7 +111,7 @@ export function AppContextPanel({ data }: { data: AppData }) {
         </div>
         {data.additionalApplicants.map((ap, i) => (
           <div key={i} style={{ display: "flex", gap: "4px" }}>
-            <span style={{ color: "#555", flexShrink: 0, width: "104px" }}>
+            <span style={{ color: "#666", flexShrink: 0, width: "108px" }}>
               Addtnl. Applicant {i + 1}:
             </span>
             <span>

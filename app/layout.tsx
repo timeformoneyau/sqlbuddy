@@ -32,12 +32,15 @@ export default function RootLayout({
 
           {/* Main content column */}
           <div className="flex flex-col flex-1 overflow-hidden">
-            {/* Sub-brand badge + tab nav row */}
+            {/* Sub-brand badge + tab nav row — items-end so tabs sit on the shelf */}
             <div
-              className="flex items-center gap-6 px-4 py-2 bg-white border-b flex-shrink-0"
-              style={{ borderColor: "var(--colcap-divider)" }}
+              className="flex items-end px-4 pt-2 bg-white border-b flex-shrink-0"
+              style={{ borderColor: "#A8BFD0", gap: "24px" }}
             >
-              <SubBrandBadge brand={applicationData.brand} />
+              {/* Badge pushed up slightly so it doesn't hug the shelf line */}
+              <div style={{ marginBottom: "5px" }}>
+                <SubBrandBadge brand={applicationData.brand} />
+              </div>
               <TabNav activeTab="Financials" />
             </div>
 

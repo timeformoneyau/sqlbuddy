@@ -21,9 +21,9 @@ function RailButton({
       style={{
         display: "flex",
         alignItems: "center",
-        gap: "4px",
-        padding: "2px 5px",
-        fontSize: "11px",
+        gap: "5px",
+        padding: "5px 8px",
+        fontSize: "12px",
         width: "100%",
         textAlign: "left",
         cursor: "pointer",
