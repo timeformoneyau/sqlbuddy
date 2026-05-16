@@ -21,80 +21,89 @@ interface AppData {
   additionalApplicants: Applicant[];
 }
 
-function Field({ children }: { children: React.ReactNode }) {
-  return (
-    <div
-      className="px-2 py-1.5 text-xs border-b"
-      style={{ borderColor: "var(--colcap-divider)", background: "white" }}
-    >
-      {children}
-    </div>
-  );
-}
+const row: React.CSSProperties = {
+  padding: "3px 6px",
+  fontSize: "11px",
+  borderBottom: "1px solid #D0D0D0",
+  background: "white",
+  lineHeight: "1.35",
+};
 
 export function AppContextPanel({ data }: { data: AppData }) {
   return (
     <div
-      className="flex flex-col border border-gray-300 bg-white"
-      style={{ width: "270px", minWidth: "270px" }}
+      style={{
+        width: "256px",
+        minWidth: "256px",
+        border: "1px solid #D0D0D0",
+        background: "white",
+      }}
     >
-      <Field>
-        <span className="text-gray-600">Application ID : </span>
+      <div style={row}>
+        <span style={{ color: "#555" }}>Application ID : </span>
         {data.applicationId}
-      </Field>
+      </div>
 
-      <Field>
-        <span className="text-gray-600">Current Status : </span>
+      <div style={row}>
+        <span style={{ color: "#555" }}>Current Status : </span>
         {data.status.label} –{" "}
         <a href="#" style={{ color: "var(--colcap-link)" }}>
           {data.status.detail}
         </a>
-      </Field>
+      </div>
 
-      <Field>
-        <span className="text-gray-600">Current Queue : </span>
+      <div style={row}>
+        <span style={{ color: "#555" }}>Current Queue : </span>
         {data.queue.name} for {data.queue.hours} hours
-      </Field>
+      </div>
 
-      <Field>
-        Submitted on {data.submittedDate} which was {data.submittedHoursAgo}{" "}
-        hours ago
-      </Field>
+      <div style={row}>
+        Submitted on {data.submittedDate} which was {data.submittedHoursAgo} hours ago
+      </div>
 
-      <Field>
-        <span className="text-gray-600">Refinance </span>for{" "}
-        {data.refinanceAmount}
-      </Field>
+      <div style={row}>
+        <span style={{ color: "#555" }}>Refinance </span>for {data.refinanceAmount}
+      </div>
 
-      <Field>
+      <div style={row}>
         Valuation {data.valuation} | Estimated Price {data.estimatedPrice}
-      </Field>
+      </div>
 
-      <Field>
+      <div style={row}>
         LVR {data.lvr} | LMI {data.lmi}
-      </Field>
+      </div>
 
-      {/* ThreatMetrix warning */}
-      <div className="px-2 py-1.5 text-xs font-semibold" style={{ color: "var(--colcap-status-warning)" }}>
-        {data.threatMetrixRun ? "ThreatMetrix Call Has Been Run" : "ThreatMetrix Call Has Not Been Run"}
+      {/* ThreatMetrix */}
+      <div
+        style={{
+          padding: "3px 6px",
+          fontSize: "11px",
+          fontWeight: "600",
+          lineHeight: "1.35",
+          color: "var(--colcap-status-warning)",
+        }}
+      >
+        {data.threatMetrixRun
+          ? "ThreatMetrix Call Has Been Run"
+          : "ThreatMetrix Call Has Not Been Run"}
       </div>
 
       {/* Alert links */}
-      <div className="px-2 py-0.5 text-xs">
+      <div style={{ padding: "1px 6px", fontSize: "11px" }}>
         <a href="#" style={{ color: "var(--colcap-link)" }}>
           {data.applicationAlerts} new application level alerts.
         </a>
       </div>
-      <div className="px-2 py-1.5 text-xs">
+      <div style={{ padding: "1px 6px 4px", fontSize: "11px" }}>
         <a href="#" style={{ color: "var(--colcap-link)" }}>
           {data.applicantAlerts} new applicant level alerts.
         </a>
       </div>
 
       {/* Applicants */}
-      <div className="px-2 py-2 text-xs space-y-1">
-        <div className="flex gap-1">
-          <span className="text-gray-600 flex-shrink-0" style={{ width: "110px" }}>
+      <div style={{ padding: "4px 6px 5px", fontSize: "11px", borderTop: "1px solid #D0D0D0" }}>
+        <div style={{ display: "flex", gap: "4px", marginBottom: "2px" }}>
+          <span style={{ color: "#555", flexShrink: 0, width: "104px" }}>
             Primary Applicant:
           </span>
           <span>
@@ -105,8 +114,8 @@ export function AppContextPanel({ data }: { data: AppData }) {
           </span>
         </div>
         {data.additionalApplicants.map((ap, i) => (
-          <div key={i} className="flex gap-1">
-            <span className="text-gray-600 flex-shrink-0" style={{ width: "110px" }}>
+          <div key={i} style={{ display: "flex", gap: "4px" }}>
+            <span style={{ color: "#555", flexShrink: 0, width: "104px" }}>
               Addtnl. Applicant {i + 1}:
             </span>
             <span>

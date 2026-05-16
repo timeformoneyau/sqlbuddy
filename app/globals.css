@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -27,12 +28,12 @@
 }
 
 html, body, * {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Nunito Sans', 'Helvetica Neue', sans-serif;
   box-sizing: border-box;
 }
 
 body {
   background: var(--colcap-page-bg);
   color: var(--colcap-text);
-  font-size: 13px;
+  font-size: 12px;
 }

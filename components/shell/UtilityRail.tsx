@@ -18,33 +18,21 @@ function RailButton({
 }) {
   return (
     <button
-      className="flex items-center gap-1.5 px-2 py-1 text-xs rounded-sm w-full text-left cursor-pointer hover:opacity-90"
       style={{
+        display: "flex",
+        alignItems: "center",
+        gap: "4px",
+        padding: "2px 5px",
+        fontSize: "11px",
+        width: "100%",
+        textAlign: "left",
+        cursor: "pointer",
         backgroundColor: "var(--colcap-button-green)",
         border: "1px solid var(--colcap-button-green-border)",
+        borderRadius: "2px",
         color: "#2a2a2a",
-      }}
-    >
-      <Icon size={12} strokeWidth={2} />
-      <span>{label}</span>
-    </button>
-  );
-}
-
-function RailButtonSmall({
-  icon: Icon,
-  label,
-}: {
-  icon: React.ComponentType<{ size?: number; strokeWidth?: number }>;
-  label: string;
-}) {
-  return (
-    <button
-      className="flex items-center gap-1 px-1.5 py-1 text-xs rounded-sm flex-1 justify-center cursor-pointer hover:opacity-90"
-      style={{
-        backgroundColor: "var(--colcap-button-green)",
-        border: "1px solid var(--colcap-button-green-border)",
-        color: "#2a2a2a",
+        fontFamily: "inherit",
+        lineHeight: "1.4",
       }}
     >
       <Icon size={11} strokeWidth={2} />
@@ -56,16 +44,23 @@ function RailButtonSmall({
 export function UtilityRail() {
   return (
     <nav
-      className="flex flex-col gap-1 p-1.5 bg-white border-r flex-shrink-0"
-      style={{ width: "92px", borderColor: "var(--colcap-divider)" }}
+      style={{
+        width: "86px",
+        minWidth: "86px",
+        flexShrink: 0,
+        backgroundColor: "white",
+        borderRight: "1px solid var(--colcap-divider)",
+        padding: "4px 3px",
+        display: "flex",
+        flexDirection: "column",
+        gap: "2px",
+      }}
     >
       <RailButton icon={Home} label="Home" />
       <RailButton icon={LogOut} label="Log Out" />
       <RailButton icon={Phone} label="Contact Us" />
-      <div className="flex gap-1">
-        <RailButtonSmall icon={ArrowLeft} label="Back" />
-        <RailButtonSmall icon={ArrowRight} label="Next" />
-      </div>
+      <RailButton icon={ArrowLeft} label="Back" />
+      <RailButton icon={ArrowRight} label="Next" />
       <RailButton icon={FileText} label="Notes" />
       <RailButton icon={GitFork} label="Trail" />
       <RailButton icon={File} label="Docs" />

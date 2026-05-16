@@ -6,26 +6,35 @@ interface TabNavProps {
 
 export function TabNav({ activeTab = "Financials" }: TabNavProps) {
   return (
-    <nav className="flex items-center gap-1">
+    <nav style={{ display: "flex", alignItems: "center", gap: "3px" }}>
       {TABS.map((tab) => {
         const isActive = tab === activeTab;
         return (
           <button
             key={tab}
-            className="px-4 py-1 text-xs rounded-sm border cursor-pointer"
             style={
               isActive
                 ? {
                     backgroundColor: "var(--colcap-tab-active)",
-                    borderColor: "#bbb",
+                    border: "1px solid #aaa",
+                    borderRadius: "1px",
                     color: "#333",
                     fontStyle: "italic",
-                    fontWeight: "bold",
+                    fontWeight: "700",
+                    fontSize: "11px",
+                    padding: "2px 10px",
+                    cursor: "pointer",
+                    fontFamily: "inherit",
                   }
                 : {
-                    backgroundColor: "#f4f4f4",
-                    borderColor: "#ccc",
+                    backgroundColor: "#f0f0f0",
+                    border: "1px solid #ccc",
+                    borderRadius: "1px",
                     color: "var(--colcap-tab-inactive-text)",
+                    fontSize: "11px",
+                    padding: "2px 10px",
+                    cursor: "pointer",
+                    fontFamily: "inherit",
                   }
             }
           >

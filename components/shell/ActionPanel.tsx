@@ -1,3 +1,5 @@
+import { UserCheck } from "lucide-react";
+
 const ACTIONS = [
   "Awaiting Valuation",
   "Sync & Reassess",
@@ -9,11 +11,13 @@ const ACTIONS = [
 
 export function ActionPanel() {
   return (
-    <div className="border-t" style={{ borderColor: "var(--colcap-divider)" }}>
+    <div style={{ borderTop: "1px solid #D0D0D0" }}>
       {/* Select Action header */}
       <div
-        className="px-3 py-2 text-sm font-bold"
         style={{
+          padding: "3px 6px",
+          fontSize: "12px",
+          fontWeight: "bold",
           backgroundColor: "var(--colcap-section-bg)",
           color: "var(--colcap-section-text)",
         }}
@@ -22,20 +26,46 @@ export function ActionPanel() {
       </div>
 
       {/* Action rows */}
-      <div className="flex flex-col">
-        {ACTIONS.map((action) => (
-          <button
-            key={action}
-            className="text-left px-3 py-2 text-xs border-b cursor-pointer hover:bg-gray-50"
-            style={{
-              borderColor: "var(--colcap-divider)",
-              color: "var(--colcap-text)",
-              background: "white",
-            }}
-          >
-            {action}
-          </button>
-        ))}
+      {ACTIONS.map((action) => (
+        <button
+          key={action}
+          style={{
+            display: "block",
+            width: "100%",
+            textAlign: "left",
+            padding: "3px 8px",
+            fontSize: "11px",
+            borderBottom: "1px solid #D0D0D0",
+            cursor: "pointer",
+            background: "white",
+            color: "var(--colcap-text)",
+            fontFamily: "inherit",
+          }}
+        >
+          {action}
+        </button>
+      ))}
+
+      {/* Become Underwriter — de-emphasised secondary action */}
+      <div style={{ padding: "6px 6px 4px" }}>
+        <button
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "4px",
+            padding: "2px 6px",
+            fontSize: "11px",
+            cursor: "pointer",
+            backgroundColor: "var(--colcap-button-green)",
+            border: "1px solid var(--colcap-button-green-border)",
+            borderRadius: "2px",
+            color: "#2a2a2a",
+            fontFamily: "inherit",
+          }}
+        >
+          <UserCheck size={11} strokeWidth={2} />
+          <span>Become Underwriter</span>
+        </button>
       </div>
     </div>
   );
